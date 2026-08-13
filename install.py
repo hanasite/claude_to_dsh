@@ -15,6 +15,13 @@ import os
 import shutil
 import sys
 
+# Windows 中文控制台默认 GBK，✓ 等 UTF-8 字符 print 会崩溃（UnicodeEncodeError）
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except AttributeError:
+    pass
+
 HOME = os.path.expanduser("~")
 SCRIPTS_DST = os.path.join(HOME, "scripts")
 HOOKS_DST = os.path.join(HOME, ".claude", "hooks")
