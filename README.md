@@ -1,4 +1,4 @@
-# claude-history-sync
+# claude_to_dsh
 
 把 Claude Code 历史会话（`~/.claude/projects/**/*.jsonl`）转成 token 极省的 markdown 档案，供 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（`dsh`）按会话 ID 引用。
 
@@ -26,12 +26,12 @@
 ## 安装
 
 ```bash
-git clone https://github.com/hanasite/claude-history-sync.git
-cd claude-history-sync
+git clone https://github.com/hanasite/claude_to_dsh.git
+cd claude_to_dsh
 python install.py          # 复制脚本到 ~/scripts/ + 注册 hook 到 ~/.claude/settings.json
 ```
 
-然后把 skill 放入 `~/.claude/skills/claude-history-sync/`（或通过 skillhub/clawhub 安装）。
+然后把 skill 放入 `~/.claude/skills/claude_to_dsh/`（或通过 skillhub/clawhub 安装）。
 
 **重启 Claude Code**（或 `/hooks` 重载）后生效。
 
