@@ -25,6 +25,19 @@
 
 ## 安装
 
+### 方式 A：一键复制给 Claude 安装（推荐）
+
+把下面整段复制粘贴给 Claude Code，它自动完成克隆、放置 skill、注册 hook：
+
+```
+帮我安装 claude_to_dsh skill：
+1. 运行 git clone https://github.com/hanasite/claude_to_dsh.git ~/.claude/skills/claude_to_dsh
+2. cd ~/.claude/skills/claude_to_dsh && python install.py
+3. 完成后告诉我重启 Claude Code（或 /hooks 重载）生效
+```
+
+### 方式 B：终端手动安装
+
 ```bash
 git clone https://github.com/hanasite/claude_to_dsh.git
 cd claude_to_dsh
