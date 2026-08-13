@@ -4,6 +4,12 @@
 
 **核心思路**：Claude Code 的原始会话 JSONL 里 90%+ 是工具调用噪音（实测 100MB → 3.9MB 纯对话，压缩到 4%）。转换后 dsh 每次只需读几 KB 的索引/摘要，而不是全量历史——**用一次转换成本换长期的低 token 引用**。
 
+## 效果预览
+
+执行完整工作流后，dsh 按项目生成工作区，历史会话按 ID 可引用，右下角还有 DeepSeek 鲸鱼娘桌宠陪伴：
+
+![workflow result](assets/workflow-result.png)
+
 ## 工作流
 
 ```
