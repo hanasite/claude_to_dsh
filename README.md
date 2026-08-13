@@ -6,7 +6,7 @@
 
 ## 效果预览
 
-执行完整工作流后，dsh 按项目生成工作区，历史会话按 ID 可引用，右下角还有 DeepSeek 鲸鱼娘桌宠陪伴：
+执行完整工作流后，dsh 按项目生成工作区，历史会话按 ID 可引用：
 
 ![workflow result](assets/workflow-result.png)
 
