@@ -29,6 +29,8 @@
 | **DEEPSEEK_API_KEY** | 写入 dsh 运行目录 `.env` | dsh 发起 LLM 任务 |
 | dsh web 服务（可选） | `dsh web`（http://127.0.0.1:3080） | 工作区注册与 UI 浏览（无它则跳过注册步骤） |
 
+> 🖥️ **平台**：目前在 **Windows 11** 上完整实测（含中文路径、GBK 控制台、dsh 全局版）。macOS/Linux 理论兼容（Python 路径处理跨平台），但 dsh 行为差异未验证——遇到问题请提 issue。
+
 > ⚠️ dsh 目前是 developer preview，命令/行为可能变化。会话存储格式（`SESSION_FORMAT_VERSION=0`）与 Claude Code 不互通——本 skill 走**文档引用**而非会话迁移。
 
 ## 安装

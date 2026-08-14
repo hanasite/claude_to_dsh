@@ -21,12 +21,12 @@ if "claude-history-dump" in cmd:
                 "permissionDecisionReason": "已带 --only（用户已勾选会话），放行",
             }
         }
-    elif "--index" in cmd or "--days" in cmd:
+    elif "--write" not in cmd:
         out = {
             "hookSpecificOutput": {
                 "hookEventName": "PreToolUse",
                 "permissionDecision": "allow",
-                "permissionDecisionReason": "只读操作（--index/--days），放行",
+                "permissionDecisionReason": "只读操作（无 --write），放行",
             }
         }
     else:
@@ -34,7 +34,7 @@ if "claude-history-dump" in cmd:
             "hookSpecificOutput": {
                 "hookEventName": "PreToolUse",
                 "permissionDecision": "deny",
-                "permissionDecisionReason": "历史会话迁移必须先用 AskUserQuestion 让用户勾选要迁移的会话，再带 --only <会话ID列表> 重跑（见 skill claude-history-sync 工作流步骤 0）",
+                "permissionDecisionReason": "历史会话迁移必须先用 AskUserQuestion 让用户勾选要迁移的会话，再带 --only <会话ID列表> 重跑（见 skill claude_to_dsh 工作流步骤 0）",
             }
         }
 else:

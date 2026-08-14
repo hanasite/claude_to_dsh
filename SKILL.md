@@ -1,5 +1,5 @@
 ---
-name: claude-history-sync
+name: claude_to_dsh
 description: Use when the user wants to recover context from past Claude Code conversations for dsh (deepseek-harness) or other tools — "历史对话", "compact 历史", "把 claude 会话同步过来", "恢复上次讨论", "历史上下文". Converts Claude Code JSONL history to a token-lean markdown archive, optionally compacts each session into a structured summary, and references it by session ID.
 ---
 

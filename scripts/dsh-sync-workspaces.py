@@ -135,7 +135,9 @@ def attach_sessions():
     if changed:
         with open(ws_path, "w", encoding="utf-8") as f:
             json.dump(d, f, ensure_ascii=False, indent=1)
-        print(f"=== 已更新 {changed} 个工作区（workspace.json），需重启 dsh web 生效 ===")
+        print(f"=== 已写入 {changed} 个工作区的 sessionIds ===")
+        print("⚠️ 手动写入在 web 重启时可能被 header index 过滤（实测坑）")
+        print("   可靠做法：备份后删除 workspace.json，重启 dsh web 走 bootstrap 全量重建")
     else:
         print("无变更；更可靠的做法：删除 workspace.json 重启 dsh web 走 bootstrap 全量重建")
 

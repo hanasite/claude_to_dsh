@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""claude-history-sync 安装脚本。
+"""claude_to_dsh 安装脚本。
 
 功能:
   1. 复制 scripts/ 到 ~/scripts/（Claude Code 工具脚本目录）
@@ -51,7 +51,7 @@ def register_hook(settings: dict) -> dict:
         "matcher": "Bash",
         "hooks": [{
             "type": "command",
-            "shell": "bash",
+            # 不指定 shell：Claude Code 自动选（POSIX bash / 无 Git Bash 的 Windows 用 PowerShell）
             "command": HOOK_COMMAND,
             "timeout": 10,
         }],
@@ -90,7 +90,7 @@ def main():
         print("卸载完成（文件保留，可手动删除 ~/scripts/ 与 ~/.claude/hooks/ 下对应文件）")
         return
 
-    print("=== 安装 claude-history-sync ===")
+    print("=== 安装 claude_to_dsh ===")
     copy_dir("scripts", SCRIPTS_DST)
     copy_dir("hooks", HOOKS_DST)
 
