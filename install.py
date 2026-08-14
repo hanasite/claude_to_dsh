@@ -35,7 +35,10 @@ def copy_dir(name: str, dst: str) -> None:
     src = os.path.join(SRC, name)
     os.makedirs(dst, exist_ok=True)
     for fn in os.listdir(src):
-        shutil.copy2(os.path.join(src, fn), os.path.join(dst, fn))
+        src_path = os.path.join(src, fn)
+        if not os.path.isfile(src_path):
+            continue  # 跳过 __pycache__ 等目录
+        shutil.copy2(src_path, os.path.join(dst, fn))
         print(f"  ✓ {name}/{fn} → {dst}")
 
 
